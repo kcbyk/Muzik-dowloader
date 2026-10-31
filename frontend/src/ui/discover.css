@@ -1,0 +1,68 @@
+/* Music discovery: black canvas, readable image cards, inexpensive motion. */
+#homeView { max-width: 660px; }
+#homeView > .card { padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+#homeView .discover-header { align-items: flex-start; text-align: left; margin: 0 0 26px; }
+.discover-eyebrow { color: #a0a0a0; font-size: 10px; font-weight: 800; letter-spacing: .2em; }
+.discover-eyebrow span { color: #fff; padding-left: 5px; }
+#homeView .discover-header h1 { color: #fff; font-size: clamp(2rem, 6vw, 3rem); letter-spacing: -.055em; line-height: 1.15; margin: 15px 0 6px; }
+#homeView .discover-header .subtitle { color: #a0a0a0; font-size: .86rem; line-height: 1.5; text-align: left; }
+#homeView .input-section { margin: 0 0 26px; gap: 12px; }
+#homeView .input-wrapper { position: relative; }
+#homeView .url-input { height: 58px; padding: 0 99px 0 51px; border-radius: 18px; border: 1px solid #303030; background: #101010; color: #fff; font-size: 15px; }
+#homeView .url-input:focus { background: #121212; border-color: #888; }
+#homeView .input-icon { left: 18px; color: #ddd; }
+#homeView .input-icon svg { width: 21px; height: 21px; }
+#homeView .clear-btn { right: 62px; width: 30px; height: 30px; justify-content: center; }
+#homeView:not(.has-query) .clear-btn { visibility: hidden; }
+.search-submit { position: absolute; right: 8px; top: 8px; width: 42px; height: 42px; border-radius: 13px; color: #fff; background: #000; border: 1px solid #393939; display: grid; place-items: center; cursor: pointer; }
+.search-submit svg { width: 20px; height: 20px; }
+#homeView .controls-row, #homeView .hint, #homeView > .card > #downloadBtn { display: none; }
+#homeView.has-link .controls-row, #homeView.has-link .hint { display: block; }
+#homeView.has-link > .card > #downloadBtn { display: flex; background: #000; color: #fff; border: 1px solid #555; }
+#homeView.showing-results #favoritesSection, #homeView.showing-results #historySection, #homeView.showing-results #wrappedCard { display: none; }
+#homeView .search-results { margin: 0; }
+.result-heading { display: flex; align-items: center; gap: 13px; margin: 4px 0 16px; }
+#homeView .search-results-title { color: #ededed; font-size: 13px; font-weight: 700; letter-spacing: .01em; margin: 0; white-space: nowrap; }
+.result-heading-line { flex: 1; height: 1px; background: #242424; }
+#homeView .results-list { display: grid; grid-template-columns: 1fr; gap: 16px; }
+#homeView .result-item { position: relative; display: block; padding: 0; overflow: hidden; aspect-ratio: 1.82 / 1; min-height: 190px; border: 1px solid #242424; border-radius: 19px; background: #151515; box-shadow: none; contain: layout paint; }
+#homeView .result-item::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.8) 0%, rgba(0,0,0,.24) 42%, rgba(0,0,0,.03) 60%, rgba(0,0,0,.78) 100%); pointer-events: none; z-index: 1; }
+#homeView .result-thumbnail { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; border-radius: 0; object-fit: cover; }
+#homeView .result-info { position: absolute; z-index: 2; inset: 19px 55px auto 19px; display: block; pointer-events: auto; }
+#homeView .result-title { color: #fff; font-size: clamp(16px, 3.8vw, 21px); font-weight: 750; line-height: 1.22; white-space: normal; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; text-shadow: 0 2px 8px #000; }
+#homeView .result-meta { color: #eee; font-size: 12px; margin-top: 6px; font-weight: 600; text-shadow: 0 1px 5px #000; }
+#homeView .result-duration { position: absolute; bottom: 16px; left: 16px; z-index: 2; padding: 4px 8px; border-radius: 8px; background: rgba(0,0,0,.82); color: #fff; font-size: 11px; }
+#homeView .result-item .preview-btn, #homeView .result-item .result-download-btn { position: absolute; z-index: 3; bottom: 14px; width: 49px; height: 49px; display: grid; place-items: center; border-radius: 15px; background: #000; border: 1px solid #777; color: #fff; cursor: pointer; }
+#homeView .result-item .preview-btn { right: 73px; }
+#homeView .result-item .result-download-btn { right: 14px; }
+#homeView .result-item .preview-btn svg, #homeView .result-item .result-download-btn svg { width: 21px; height: 21px; }
+#homeView .result-item .preview-btn .pause-icon { display: none; }
+#homeView .result-item .favorite-btn { position: absolute; z-index: 3; top: 14px; right: 14px; width: 36px; height: 36px; border-radius: 12px; background: rgba(0,0,0,.83); border-color: #555; color: #fff; }
+#homeView .result-item .favorite-btn.active { color: #ff9090; }
+#homeView .load-more-container { margin: 0; }
+#homeView .load-more-btn { background: #000; border: 1px solid #444; color: #fff; border-radius: 14px; }
+#homeView .esqueleto-resultado { min-height: 170px; background: #141414; border-radius: 19px; }
+.bottom-nav #navProfile.settings-active { color: #fff; font-weight: 700; }
+@media (min-width: 768px) { #homeView .results-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } #homeView .result-item { min-height: 170px; } }
+@media (max-width: 767px) {
+    .main-content { padding-left: 18px; padding-right: 18px; }
+    .mobile-header-bar, .mobile-header-bar::before { background: transparent; }
+    .mobile-header-controls { background: #000; background-image: none; border-color: #282828; box-shadow: none; }
+    .bottom-nav { background: #000 !important; border: 1px solid #303030; box-shadow: none; }
+    /* Blurring large surfaces is particularly expensive on lower-end WebViews. */
+    :root { --glass-grain: none; --glass-grain-opacity: 0; }
+    .glass-thin, .glass-regular, .glass-thick, .mobile-header-controls, .mobile-header-titulo { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+    .auth-modal-content.glass-thick { background-color: #101010; }
+}
+@media (prefers-reduced-motion: reduce) { .result-item, .search-submit { animation: none !important; transition: none !important; } }
+
+@media (max-width: 767px) {
+    #homeView .result-item { padding: 0 !important; }
+    #homeView .result-thumbnail { width: 100% !important; height: 100% !important; border-radius: 0 !important; }
+    #homeView .result-title { font-size: clamp(16px, 4.3vw, 21px) !important; }
+    #homeView .result-meta { font-size: 12px !important; }
+    #homeView .result-item .preview-btn { width: 49px !important; height: 49px !important; }
+    #homeView .result-item .preview-btn svg { width: 21px !important; height: 21px !important; }
+    #homeView .result-item .favorite-btn { width: 36px !important; height: 36px !important; }
+    #homeView .result-item .favorite-btn svg { width: 16px !important; height: 16px !important; }
+}

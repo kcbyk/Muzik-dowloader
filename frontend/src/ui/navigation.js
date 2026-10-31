@@ -88,8 +88,21 @@ export const NavigationModule = (() => {
             cabecera.actualizar();
         };
 
+        const previousView = currentView;
         currentView = viewId;
         transicionDeVista(direccion, aplicar);
+        // Main tabs use a small compositor-only slide instead of an expensive
+        // page snapshot. Respect the system's reduced-motion preference.
+        if (!direccion && incoming?.animate && !globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
+            const order = ['homeView', 'libraryView', 'playlistsView'];
+            const from = order.indexOf(previousView);
+            const to = order.indexOf(viewId);
+            if (from >= 0 && to >= 0) {
+                incoming.animate([{ opacity: 0.45, transform: `translateX(${to > from ? 14 : -14}px)` },
+                    { opacity: 1, transform: 'translateX(0)' }],
+                { duration: 180, easing: 'ease-out' });
+            }
+        }
         marcarPestana(viewId);
         document.dispatchEvent(new CustomEvent('vista-cambiada', { detail: viewId }));
 

@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="/src/styles.css">
     <!-- Plan 23: el componente de ventana y el selector de canciones (A); las listas, importar y detalles (B) -->
     <link rel="stylesheet" href="/src/ui/ventana.css">
+    <link rel="stylesheet" href="/src/ui/discover.css">
     <link rel="stylesheet" href="/src/features/playlists/listas.css">
     <link rel="manifest" href="/manifest.json">
     <!-- Fuentes propias (plan 19, T10): las del primer pintado, pedidas ya -->
@@ -211,12 +212,10 @@
             <main id="homeView" class="container view-section">
                 <div class="card">
             <!-- Logo/Header (Clean and minimal) -->
-            <div class="header" style="margin-bottom: 1.5rem;">
-                <div class="logo">
-                    <h1>Music Downloader</h1>
-                    <img src="favicon.png" alt="Logo" class="youtube-icon">
-                </div>
-                <p class="subtitle" data-i18n="subtitle">Descarga tu música favorita en MP3</p>
+            <div class="header discover-header">
+                <span class="discover-eyebrow">MUSIC DOWNLOADER <span aria-hidden="true">✦</span></span>
+                <h1 data-i18n="discover_title">Müziği keşfet.</h1>
+                <p class="subtitle" data-i18n="discover_subtitle">Bir şarkı ara, bul ve kendi ritmine bırak.</p>
             </div>
 
             <!-- Input Section -->
@@ -232,6 +231,7 @@
                             <path d="m21 21-4.35-4.35" />
                         </svg>
                     </div>
+                    <button id="searchSubmit" class="search-submit" type="button" data-i18n-aria="search_action" aria-label="Ara"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h15M14 7l5 5-5 5"/></svg></button>
                     <button id="clearBtn" data-i18n-title="t_clear" class="clear-btn" type="button" title="Limpiar">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <line x1="18" y1="6" x2="6" y2="18" />
@@ -277,7 +277,7 @@
 
             <!-- Search Results Section -->
             <div id="searchResults" class="search-results hidden">
-                <p class="search-results-title" data-i18n="search_results_title">Selecciona una canción:</p>
+                <div class="result-heading"><p class="search-results-title" data-i18n="search_results_title">Arama sonuçları</p><span class="result-heading-line"></span></div>
                 <div id="resultsList" class="results-list"></div>
             </div>
 

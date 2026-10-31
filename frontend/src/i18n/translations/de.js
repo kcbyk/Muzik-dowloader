@@ -590,4 +590,8 @@ export default {
     yt_make_playlist_name: 'Name der Playlist',
     // ── Plan 27: ninguna canción ni lista sin portada ──
     pl_cover_generated: 'Generiertes Cover {n}',
+
+    "discover_title": "Musik entdecken.",
+    "discover_subtitle": "Suche einen Song und finde deinen Rhythmus.",
+    "search_action": "Suchen",
 };

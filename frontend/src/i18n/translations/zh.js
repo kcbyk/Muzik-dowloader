@@ -590,4 +590,8 @@ export default {
     yt_make_playlist_name: '歌单名称',
     // ── Plan 27: ninguna canción ni lista sin portada ──
     pl_cover_generated: '生成的封面 {n}',
+
+    "discover_title": "发现音乐。",
+    "discover_subtitle": "搜索歌曲，找到你的节奏。",
+    "search_action": "搜索",
 };

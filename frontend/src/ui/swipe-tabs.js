@@ -34,7 +34,35 @@ export function initSwipeTabs({ main, getCurrentView, switchView, modalAbierto }
         if (Math.abs(dx) < 75 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
         const index = swipeViews.indexOf(getCurrentView()) + (dx < 0 ? 1 : -1);
         if (index >= 0 && index < swipeViews.length) switchView(swipeViews[index]);
+        else if (index === swipeViews.length && dx < 0) document.getElementById('navProfile')?.click();
     }, { passive: true });
     main?.addEventListener('touchcancel', () => { swipeStart = null; }, { passive: true });
+
+    // Settings is an existing accessible sheet, not a duplicate page. Swiping
+    // right from its non-interactive surface returns to the playlists tab.
+    const settings = document.getElementById('ajustesSheet');
+    let settingsStart = null;
+    settings?.addEventListener('touchstart', (event) => {
+        settingsStart = null;
+        if (event.touches.length !== 1 || settings.classList.contains('hidden')) return;
+        const target = event.target;
+        if (!(target instanceof Element) || target.closest('input, textarea, select, button, a, [role="slider"]')) return;
+        const t = event.touches[0];
+        if (t.clientX < 24 || t.clientX > innerWidth - 24) return;
+        settingsStart = { x: t.clientX, y: t.clientY };
+    }, { passive: true });
+    settings?.addEventListener('touchend', (event) => {
+        if (!settingsStart || event.changedTouches.length !== 1) return;
+        const dx = event.changedTouches[0].clientX - settingsStart.x;
+        const dy = event.changedTouches[0].clientY - settingsStart.y;
+        settingsStart = null;
+        if (dx > 75 && dx > Math.abs(dy) * 1.5) document.getElementById('ajustesClose')?.click();
+    }, { passive: true });
+    settings?.addEventListener('touchcancel', () => { settingsStart = null; }, { passive: true });
+    if (settings && globalThis.MutationObserver) {
+        new MutationObserver(() => {
+            document.getElementById('navProfile')?.classList.toggle('settings-active', !settings.classList.contains('hidden'));
+        }).observe(settings, { attributes: true, attributeFilter: ['class'] });
+    }
 
 }

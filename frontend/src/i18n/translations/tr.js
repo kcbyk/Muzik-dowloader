@@ -6,10 +6,10 @@ export default {
     "nav_playlists": "Çalma Listeleri",
     "library_title": "Müziklerim",
     "playlists_title": "Çalma Listelerim",
-    "search_placeholder": "Şarkı ara veya bağlantı yapıştır...",
+    "search_placeholder": "Şarkı, sanatçı veya albüm ara",
     "hint": "YouTube bağlantısı yapıştır veya şarkı adıyla ara",
     "download_btn": "{format} İndir",
-    "search_results_title": "Bir şarkı seç:",
+    "search_results_title": "Arama sonuçları",
     "playlist_content": "Oynatma Listesi İçeriği",
     "songs": "şarkı",
     "song_count_one": "{n} şarkı",
@@ -556,5 +556,8 @@ export default {
     "yt_make_playlist": "Bu şarkılardan bir çalma listesi oluşturun",
     "yt_make_playlist_help": "İndirme başlar başlamaz çalma listelerinize kaydedilir.",
     "yt_make_playlist_name": "Oynatma listesi adı",
-    "pl_cover_generated": "Oluşturulan kapak {n}"
+    "pl_cover_generated": "Oluşturulan kapak {n}",
+    "discover_title": "Müziği keşfet.",
+    "discover_subtitle": "Bir şarkı ara, bul ve kendi ritmine bırak.",
+    "search_action": "Ara",
 };

@@ -43,3 +43,7 @@ Bu paket kaynak koddur, hazır veya imzalanmış bir Android APK değildir. Andr
 `.github/workflows/android-apk.yml`, `main` dalına push yapılınca veya Actions sayfasından elle başlatılınca Android debug APK oluşturmayı dener ve 30 gün saklanan `Music-Downloader-Turkce-debug-apk` isimli artifact olarak yükler. Workflow GitHub üzerinde henüz çalıştırılmadı; ilk çalışmada sonuç ve loglar kontrol edilmelidir.
 
 APK, debug anahtarıyla imzalanır; orijinal uygulamanın resmi sürümü değildir. Paket kimliği orijinal uygulamayla aynı olduğundan imza uyuşmazlığında üzerine kurulamaz. Mevcut uygulamayı kaldırmak yerel verileri silebilir; önce yedekleyin. Yayımlanacak kalıcı bir APK için ayrı bir sürüm kimliği ve güvenli, kalıcı imzalama anahtarı düzeni gerekir.
+
+## Keşfet ve performans güncellemesi
+
+Ana ekranda sanatçı ve şarkı araması, büyük görselli kartlar ve aşağı kaydırdıkça yüklenen sonuçlar bulunur. Karttaki nota ön dinleme, indirme simgesi MP3 isteğidir. Aramalar kısa bir beklemenin ardından gönderilir ve eski yanıtlar yenilerinin yerini alamaz. Bir YouTube bağlantısı yapıştırıldığında format seçeneği açılır. Mobilde sağa/sola kaydırarak Ayarlar dahil sekmeler arasında geçilebilir; sistemin hareket azaltma ayarı dikkate alınır. Mobilde maliyetli arka plan bulanıklığı ve doku azaltıldı. Bu önlemler belirli bir cihazda performans garantisi değildir.

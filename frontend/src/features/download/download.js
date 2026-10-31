@@ -13,7 +13,7 @@ import { queueManager } from './queue.js';
 import { saveDownloadToApp } from './save.js';
 import { addToHistory } from '../history.js';
 import { LibraryModule } from '../library/library.js';
-import { hideSearchResults, searchAndShowResults } from '../search.js';
+import { hideSearchResults, queueLiveSearch, searchAndShowResults } from '../search.js';
 import { fetchAndShowPlaylist, hidePlaylistSelector } from '../youtube-playlist.js';
 import { i18n } from '../../i18n/language-manager.js';
 import { showSuccessAnimation } from '../../ui/celebration.js';
@@ -201,7 +201,9 @@ export async function downloadFromUrl(url, videoInfo = null, uiElements = null) 
             return deCache;
         }
 
-        const format = selectedAudioFormat();
+        // Search-card download is explicitly MP3 even if the user previously
+        // selected M4A for a pasted YouTube URL.
+        const format = uiElements?.format || selectedAudioFormat();
         const startResponse = await fetch(`${apiBase()}/api/start-download`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -414,6 +416,7 @@ export function initFormularioDescarga() {
     pintarBotonDescarga();
 
     downloadBtn.addEventListener('click', handleDownload);
+    document.getElementById('searchSubmit')?.addEventListener('click', handleDownload);
 
     urlInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
@@ -422,6 +425,7 @@ export function initFormularioDescarga() {
     });
 
     urlInput.addEventListener('input', () => {
+        queueLiveSearch();
         if (statusMessage.classList.contains('visible')) {
             hideStatus();
         }
@@ -430,6 +434,7 @@ export function initFormularioDescarga() {
     // Clear button functionality
     clearBtn.addEventListener('click', () => {
         urlInput.value = '';
+        queueLiveSearch();
         hideStatus();
         hidePlaylistSelector();
         urlInput.focus();

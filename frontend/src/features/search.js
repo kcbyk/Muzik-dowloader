@@ -6,10 +6,10 @@ import { conEsqueleto } from '../ui/skeleton.js';
 import { estadoVacio } from '../ui/empty-states.js';
 import { html } from '../core/html.js';
 import { apiBase } from '../config/env.js';
-import { extractVideoId, formatDuration } from '../core/utils.js';
+import { extractVideoId, formatDuration, isUrl } from '../core/utils.js';
 import { downloadFromUrl, urlInput } from './download/download.js';
 import { FavoritesModule } from './favorites/store.js';
-import { precargarVistaPrevia, stopPreview, togglePreview } from './preview.js';
+import { stopPreview, togglePreview } from './preview.js';
 import { i18n } from '../i18n/language-manager.js';
 import { mensajeDelServidor } from './download/progress.js';
 import { hideProgress, setLoading, showProgress, showStatus, updateProgress } from '../ui/status.js';
@@ -25,49 +25,130 @@ let currentSearchPage = 0;
 
 const RESULTS_PER_PAGE = 5;
 
+let searchController = null;
+let searchSequence = 0;
+let liveTimer = null;
+let lastLiveRequest = 0;
+let activeQuery = '';
+let displayedQuery = '';
+const resultCache = new Map();
+let nextPageObserver = null;
+
 function showSearchResults() {
     searchResults.classList.remove('hidden');
+    document.getElementById('homeView')?.classList.add('showing-results');
 }
 
 export function hideSearchResults() {
+    clearTimeout(liveTimer);
+    const wasSearching = Boolean(searchController);
+    searchController?.abort();
+    searchController = null;
+    searchSequence++;
+    activeQuery = '';
+    displayedQuery = '';
+    if (wasSearching) { setLoading(false); hideProgress(); }
+    nextPageObserver?.disconnect();
     searchResults.classList.add('hidden');
-    resultsList.innerHTML = '';
+    document.getElementById('homeView')?.classList.remove('showing-results');
+    resultsList.replaceChildren();
+}
+
+/** Wait for typing to settle and keep live requests below the API's limit. */
+export function queueLiveSearch() {
+    clearTimeout(liveTimer);
+    const query = urlInput.value.trim();
+    const home = document.getElementById('homeView');
+    home?.classList.toggle('has-query', Boolean(query));
+    home?.classList.toggle('has-link', Boolean(query) && isUrl(query));
+    if (query.length < 3 || isUrl(query)) {
+        hideSearchResults();
+        return;
+    }
+    // Obsolete results must not overwrite or be mistaken for the new query.
+    if (displayedQuery && displayedQuery !== query) {
+        nextPageObserver?.disconnect();
+        searchResults.classList.add('hidden');
+        home?.classList.remove('showing-results');
+        resultsList.replaceChildren();
+        displayedQuery = '';
+    }
+    if (activeQuery && activeQuery !== query) {
+        searchController?.abort();
+        searchController = null;
+        searchSequence++;
+        activeQuery = '';
+        setLoading(false);
+        hideProgress();
+    }
+    const remaining = Math.max(0, 3200 - (Date.now() - lastLiveRequest));
+    liveTimer = setTimeout(() => {
+        lastLiveRequest = Date.now();
+        searchAndShowResults(query);
+    }, Math.max(900, remaining));
 }
 
 export async function searchAndShowResults(query) {
+    clearTimeout(liveTimer);
+    query = String(query || '').trim();
+    if (!query || activeQuery === query) return;
+    searchController?.abort();
+    const controller = new AbortController();
+    searchController = controller;
+    activeQuery = query;
+    const sequence = ++searchSequence;
+    const cacheKey = query.toLocaleLowerCase();
+    const cached = resultCache.get(cacheKey);
+    if (cached) {
+        displayedQuery = query;
+        renderSearchResults(cached);
+        searchController = null;
+        activeQuery = '';
+        return;
+    }
     setLoading(true);
     showProgress();
     updateProgress(30, i18n.t('searching'));
-
     try {
-        // Resultados con forma mientras llegan (plan 10, T8)
-        const response = await conEsqueleto(resultsList, 'resultado', 5, fetch(`${apiBase()}/api/search`, {
+        const response = await conEsqueleto(resultsList, 'resultado', 3, fetch(`${apiBase()}/api/search`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ query }),
-        }), { alMostrar: () => { resultsList.replaceChildren(); showSearchResults(); } });
-
+            signal: controller.signal,
+        }), { alMostrar: () => {
+            if (sequence !== searchSequence) return;
+            resultsList.replaceChildren();
+            showSearchResults();
+        } });
+        if (sequence !== searchSequence) return;
         if (!response.ok) {
             const errorData = await response.json().catch(() => ({}));
             throw new Error(mensajeDelServidor(errorData, i18n.t('error_search')));
         }
-
         const { results } = await response.json();
+        if (sequence !== searchSequence) return;
+        if (resultCache.size >= 20) resultCache.delete(resultCache.keys().next().value);
+        resultCache.set(cacheKey, results);
         hideProgress();
+        displayedQuery = query;
         renderSearchResults(results);
-
     } catch (error) {
+        if (controller.signal.aborted || sequence !== searchSequence) return;
         console.error('Search error:', error);
         hideProgress();
-        const msg = error.message || i18n.t('error_search');
-        showStatus(msg, 'error');
+        showStatus(error.message || i18n.t('error_search'), 'error');
     } finally {
-        setLoading(false);
+        if (sequence === searchSequence) {
+            searchController = null;
+            activeQuery = '';
+            setLoading(false);
+        }
     }
 }
 
 function renderSearchResults(results) {
     // Initialize new search
+    nextPageObserver?.disconnect();
     currentSearchResults = results;
     currentSearchPage = 0;
     resultsList.innerHTML = '';
@@ -86,6 +167,7 @@ function renderSearchResults(results) {
 }
 
 function showNextPage() {
+    nextPageObserver?.disconnect();
     // Remove existing "Load More" button if present
     const existingBtn = document.getElementById('loadMoreContainer');
     if (existingBtn) existingBtn.remove();
@@ -93,7 +175,6 @@ function showNextPage() {
     const start = currentSearchPage * RESULTS_PER_PAGE;
     const end = start + RESULTS_PER_PAGE;
     const pageItems = currentSearchResults.slice(start, end);
-    if (pageItems.length) precargarVistaPrevia();
 
     pageItems.forEach(video => {
         const item = document.createElement('div');
@@ -107,7 +188,7 @@ function showNextPage() {
         const heartFill = isFav ? 'currentColor' : 'none';
 
         item.innerHTML = html`
-            <button class="preview-btn" data-video-id="${videoId}" title="${i18n.t('t_preview')}">
+            <button class="preview-btn" data-video-id="${videoId}" title="${i18n.t('t_preview')}" aria-label="${i18n.t('t_preview')}">
                 <svg class="music-icon" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
                 </svg>
@@ -121,14 +202,17 @@ function showNextPage() {
                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
                 </svg>
             </button>
-            <img class="result-thumbnail" src="${video.thumbnail}" alt="${video.title}" loading="lazy">
+            <button class="result-download-btn" type="button" title="${i18n.t('download_btn', { format: 'MP3' })}" aria-label="${i18n.t('download_btn', { format: 'MP3' })}">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m-4-4 4 4 4-4M5 18v2h14v-2"/></svg>
+            </button>
+            <img class="result-thumbnail" src="${video.thumbnail}" alt="" loading="lazy" decoding="async">
             <div class="result-info">
                 <div class="result-title">${video.title}</div>
                 <div class="result-meta">
                     <span class="result-channel">${video.channel}</span>
-                    ${video.duration ? html`<span class="result-duration">${formatDuration(video.duration)}</span>` : ''}
                 </div>
             </div>
+            ${video.duration ? html`<span class="result-duration">${formatDuration(video.duration)}</span>` : ''}
         `;
 
         // Preview click handler
@@ -156,9 +240,13 @@ function showNextPage() {
             // hideSearchResults();
 
             // Pass the item element for visual feedback (background mode)
-            downloadFromUrl(video.url, video, { item });
+            downloadFromUrl(video.url, video, { item, format: 'mp3' });
         };
 
+        item.querySelector('.result-download-btn').addEventListener('click', (e) => {
+            e.stopPropagation();
+            startDownload();
+        });
         thumbnail.style.cursor = 'pointer';
         thumbnail.addEventListener('click', startDownload);
         infoArea.style.cursor = 'pointer';
@@ -174,9 +262,19 @@ function showNextPage() {
         const btnContainer = document.createElement('div');
         btnContainer.id = 'loadMoreContainer';
         btnContainer.className = 'load-more-container';
-        btnContainer.innerHTML = html`<button class="load-more-btn">Cargar más resultados (${currentSearchResults.length - end} restantes)...</button>`;
+        btnContainer.innerHTML = html`<button class="load-more-btn">${i18n.t('yt_load_more', { n: currentSearchResults.length - end })}</button>`;
 
         btnContainer.querySelector('button').addEventListener('click', showNextPage);
         resultsList.appendChild(btnContainer);
+        if (globalThis.IntersectionObserver) {
+            nextPageObserver?.disconnect();
+            nextPageObserver = new IntersectionObserver((entries) => {
+                if (entries.some(entry => entry.isIntersecting)) {
+                    nextPageObserver?.disconnect();
+                    showNextPage();
+                }
+            }, { root: document.querySelector('.main-content'), rootMargin: '200px' });
+            nextPageObserver.observe(btnContainer);
+        }
     }
 }
