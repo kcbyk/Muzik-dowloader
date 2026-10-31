@@ -1,0 +1,736 @@
+{
+  "url": "https://music.dannarita.es/download",
+  "historial": [
+    {
+      "versionCode": 22,
+      "versionName": "2.4.0",
+      "fecha": "2026-10-27",
+      "novedades": {
+        "es": [
+          "Las canciones en la nube suenan sin descargarlas: se preparan solas mientras escuchas",
+          "Crea una lista de YouTube sin descargarla y escúchala desde la nube",
+          "«Tu música», en Ajustes: qué es tuyo y qué suena desde la nube, y guardarlo con un toque",
+          "Elige la portada de una canción al editarla; viaja con tu cuenta",
+          "Cabecera nueva en el móvil: al bajar por una lista, su barra se queda arriba"
+        ],
+        "en": [
+          "Cloud songs play without downloading them first: they get ready while you listen",
+          "Create a playlist from YouTube without downloading it and listen from the cloud",
+          "“Your music” in Settings: what’s yours and what plays from the cloud, saved with one tap",
+          "Choose a song’s cover when editing it; it travels with your account",
+          "New header on mobile: when you scroll down a playlist, its bar stays at the top"
+        ],
+        "fr": [
+          "Les titres dans le cloud se lisent sans les télécharger : ils se préparent pendant l’écoute",
+          "Crée une playlist YouTube sans la télécharger et écoute-la depuis le cloud",
+          "« Ta musique », dans Réglages : ce qui est à toi et ce qui vient du cloud, à garder d’un geste",
+          "Choisis la pochette d’un titre en le modifiant ; elle suit ton compte",
+          "Nouvel en-tête sur mobile : en faisant défiler une playlist, sa barre reste en haut"
+        ],
+        "de": [
+          "Songs in der Cloud spielen ohne vorherigen Download: Sie werden vorbereitet, während du hörst",
+          "Erstelle eine Playlist von YouTube, ohne sie herunterzuladen, und hör sie aus der Cloud",
+          "„Deine Musik“ in den Einstellungen: was dir gehört und was aus der Cloud kommt, mit einem Tipp gespeichert",
+          "Wähle beim Bearbeiten das Cover eines Songs; es kommt mit deinem Konto mit",
+          "Neue Kopfzeile auf dem Handy: Beim Scrollen durch eine Playlist bleibt ihre Leiste oben"
+        ],
+        "pt": [
+          "As músicas na nuvem tocam sem as descarregar: preparam-se sozinhas enquanto ouves",
+          "Cria uma playlist do YouTube sem a descarregar e ouve-a a partir da nuvem",
+          "«A tua música», nas Definições: o que é teu e o que toca a partir da nuvem, guardado com um toque",
+          "Escolhe a capa de uma música ao editá-la; acompanha a tua conta",
+          "Cabeçalho novo no telemóvel: ao descer numa playlist, a barra fica em cima"
+        ],
+        "zh": [
+          "云端歌曲无需先下载即可播放：在你收听时自动准备好",
+          "从 YouTube 创建歌单而不下载，直接从云端收听",
+          "设置中的“你的音乐”：哪些属于你、哪些来自云端，一键保存",
+          "编辑歌曲时可选择封面，并随账号同步",
+          "手机端全新顶部栏：向下滚动歌单时，歌单栏固定在顶部"
+        ]
+      }
+    },
+    {
+      "versionCode": 21,
+      "versionName": "2.3.0",
+      "fecha": "2026-10-24",
+      "novedades": {
+        "es": [
+          "Animaciones más fluidas al abrir el reproductor, la cola y los menús, al pausar y al arrastrar",
+          "El scroll de la biblioteca y de las listas ya no va a trozos ni se queda atascado",
+          "El botón de reproducir y pausar de la notificación vuelve a funcionar",
+          "Más ligera: las tareas de fondo esperan a que dejes de usar la app"
+        ],
+        "en": [
+          "Smoother animations when opening the player, the queue and menus, pausing and dragging",
+          "Library and playlist scrolling no longer stutters or gets stuck",
+          "The play/pause button in the notification works again",
+          "Lighter: background tasks wait until you stop using the app"
+        ],
+        "fr": [
+          "Animations plus fluides à l’ouverture du lecteur, de la file et des menus, en pause et en glissant",
+          "Le défilement de la bibliothèque et des playlists ne saccade plus et ne se bloque plus",
+          "Le bouton lecture/pause de la notification fonctionne à nouveau",
+          "Plus légère : les tâches de fond attendent que tu n’utilises plus l’app"
+        ],
+        "de": [
+          "Flüssigere Animationen beim Öffnen von Player, Warteschlange und Menüs, beim Pausieren und Ziehen",
+          "Bibliothek und Playlists scrollen ohne Ruckeln und bleiben nicht mehr hängen",
+          "Die Wiedergabe-/Pause-Taste in der Benachrichtigung funktioniert wieder",
+          "Leichter: Hintergrundaufgaben warten, bis du die App nicht mehr benutzt"
+        ],
+        "pt": [
+          "Animações mais fluidas ao abrir o leitor, a fila e os menus, ao pausar e ao arrastar",
+          "O scroll da biblioteca e das playlists já não vai aos solavancos nem fica preso",
+          "O botão de reproduzir e pausar da notificação volta a funcionar",
+          "Mais leve: as tarefas de fundo esperam que deixes de usar a app"
+        ],
+        "zh": [
+          "打开播放器、播放队列和菜单，以及暂停和拖动时，动画更流畅",
+          "音乐库和歌单滚动不再卡顿，也不会卡住",
+          "通知中的播放/暂停按钮恢复正常",
+          "更轻快：后台任务会等你不使用应用时再进行"
+        ]
+      }
+    },
+    {
+      "versionCode": 20,
+      "versionName": "2.2.0",
+      "fecha": "2026-10-22",
+      "novedades": {
+        "es": [
+          "Ninguna lista ni canción sin portada: portadas generadas, y en «Editar» puedes elegir entre 8",
+          "Las canciones antiguas recuperan su carátula de YouTube cuando se encuentra",
+          "Al descargar una lista de YouTube, crea a la vez una lista propia con esas canciones",
+          "El scroll de la biblioteca va fluido desde el principio, también con canciones importadas",
+          "Abre más ligera: ya no vuelve a leer en cada inicio las canciones de tu móvil"
+        ],
+        "en": [
+          "No playlist or song without a cover: generated covers, and you can pick one of 8 in «Edit»",
+          "Older songs get their YouTube artwork back when it can be found",
+          "When you download a YouTube playlist, create your own playlist with those songs at the same time",
+          "Library scrolling is smooth from the start, imported songs included",
+          "Opens lighter: it no longer re-reads your phone's songs every time it starts"
+        ],
+        "fr": [
+          "Plus aucune playlist ni titre sans pochette : pochettes générées, et 8 au choix dans « Modifier »",
+          "Les anciens titres récupèrent leur pochette YouTube quand elle est trouvée",
+          "En téléchargeant une playlist YouTube, crée en même temps ta playlist avec ces titres",
+          "Le défilement de la bibliothèque est fluide dès le début, titres importés compris",
+          "Ouverture plus légère : l’app ne relit plus les titres de ton téléphone à chaque démarrage"
+        ],
+        "de": [
+          "Keine Playlist und kein Titel ohne Cover: generierte Cover, 8 zur Auswahl unter «Bearbeiten»",
+          "Ältere Titel bekommen ihr YouTube-Cover zurück, wenn es gefunden wird",
+          "Beim Herunterladen einer YouTube-Playlist gleich eine eigene Playlist mit diesen Titeln erstellen",
+          "Die Bibliothek scrollt von Anfang an flüssig, auch mit importierten Titeln",
+          "Startet leichter: Die Titel auf deinem Handy werden nicht mehr bei jedem Start neu gelesen"
+        ],
+        "pt": [
+          "Nenhuma playlist nem música sem capa: capas geradas, e em «Editar» podes escolher entre 8",
+          "As músicas antigas recuperam a capa do YouTube quando é encontrada",
+          "Ao transferir uma playlist do YouTube, cria ao mesmo tempo a tua playlist com essas músicas",
+          "O scroll da biblioteca é fluido desde o início, também com músicas importadas",
+          "Abre mais leve: já não volta a ler as músicas do telemóvel em cada arranque"
+        ],
+        "zh": [
+          "歌单和歌曲都不会再没有封面：自动生成封面，并可在“编辑”中从 8 款里选择",
+          "找到时，旧歌曲会自动找回 YouTube 封面",
+          "下载 YouTube 歌单时，可同时用这些歌曲创建自己的歌单",
+          "音乐库从一开始就滚动流畅，导入的歌曲也一样",
+          "启动更轻快：不再在每次打开时重新读取手机里的歌曲"
+        ]
+      }
+    },
+    {
+      "versionCode": 19,
+      "versionName": "2.1.1",
+      "fecha": "2026-10-11",
+      "novedades": {
+        "es": [
+          "El scroll de la biblioteca vuelve a ser fluido: ya no salta mientras la app ordena tus canciones"
+        ],
+        "en": [
+          "Smooth scrolling in your library again: no more jumps while the app tidies up your songs"
+        ],
+        "fr": [
+          "Le défilement de la bibliothèque est de nouveau fluide : plus de sauts pendant que l’app range tes titres"
+        ],
+        "de": [
+          "Die Bibliothek scrollt wieder flüssig: keine Sprünge mehr, während die App deine Titel ordnet"
+        ],
+        "pt": [
+          "O scroll da biblioteca volta a ser fluido: já não salta enquanto a app organiza as tuas músicas"
+        ],
+        "zh": [
+          "音乐库滚动重新变得流畅：应用整理歌曲时不再跳动"
+        ]
+      }
+    },
+    {
+      "versionCode": 18,
+      "versionName": "2.1.0",
+      "fecha": "2026-10-11",
+      "novedades": {
+        "es": [
+          "Listas renovadas: portada, menú ⋮, buscar y ordenar, selección múltiple y borrar con «Deshacer»",
+          "Recomendadas siempre a la vista, más variadas y sin volver a descargar lo que ya tienes",
+          "Radio más variada, con dos canciones por artista como mucho; y mezclas de YouTube de hasta 100",
+          "Fondo con los colores de la carátula que suena (se puede apagar en Ajustes)",
+          "Letras de la versión que suena, y sin sincronizar cuando los tiempos no cuadran",
+          "Importar del móvil encuentra todas tus canciones, y escuchar antes de descargar va más rápido"
+        ],
+        "en": [
+          "Revamped playlists: cover, ⋮ menu, search and sort, multi-select and delete with «Undo»",
+          "Recommendations always in view, more varied, and no re-downloading what you already have",
+          "More varied radio, at most two songs per artist; and YouTube mixes of up to 100 songs",
+          "Background with the colours of the playing artwork (can be turned off in Settings)",
+          "Lyrics for the version that's playing, and no syncing when the timings don't match",
+          "Importing from your phone finds all your songs, and previews start faster"
+        ],
+        "fr": [
+          "Playlists repensées : pochette, menu ⋮, recherche et tri, sélection multiple et suppression avec « Annuler »",
+          "Recommandations toujours visibles, plus variées, sans retélécharger ce que tu as déjà",
+          "Radio plus variée, deux titres par artiste au plus ; et mix YouTube jusqu’à 100 titres",
+          "Fond aux couleurs de la pochette en cours (désactivable dans Réglages)",
+          "Paroles de la version écoutée, sans synchro quand les temps ne correspondent pas",
+          "L’import depuis le téléphone trouve tous tes titres, et l’écoute avant téléchargement est plus rapide"
+        ],
+        "de": [
+          "Neue Playlists: Cover, ⋮-Menü, Suchen und Sortieren, Mehrfachauswahl und Löschen mit «Rückgängig»",
+          "Empfehlungen immer sichtbar, abwechslungsreicher, ohne Vorhandenes erneut herunterzuladen",
+          "Abwechslungsreicheres Radio, höchstens zwei Titel pro Künstler; YouTube-Mixe mit bis zu 100 Titeln",
+          "Hintergrund in den Farben des aktuellen Covers (in den Einstellungen abschaltbar)",
+          "Songtexte der gespielten Version, ohne Synchronisierung, wenn die Zeiten nicht passen",
+          "Der Import vom Handy findet alle deine Titel, und das Probehören startet schneller"
+        ],
+        "pt": [
+          "Playlists renovadas: capa, menu ⋮, pesquisar e ordenar, seleção múltipla e eliminar com «Desfazer»",
+          "Recomendações sempre visíveis, mais variadas e sem voltar a descarregar o que já tens",
+          "Rádio mais variada, no máximo duas músicas por artista; e mixes do YouTube até 100 músicas",
+          "Fundo com as cores da capa que está a tocar (pode desligar-se em Definições)",
+          "Letras da versão que está a tocar, e sem sincronizar quando os tempos não batem certo",
+          "Importar do telemóvel encontra todas as tuas músicas, e ouvir antes de descarregar é mais rápido"
+        ],
+        "zh": [
+          "歌单焕新：封面、⋮ 菜单、搜索与排序、多选，以及可“撤销”的删除",
+          "推荐始终可见，更加多样，已有的歌曲无需重新下载",
+          "电台更多样：每位艺人最多两首；YouTube 合辑最多可加载 100 首",
+          "背景随当前封面的颜色变化（可在设置中关闭）",
+          "歌词匹配正在播放的版本，时间对不上时不再同步",
+          "从手机导入能找到所有歌曲，试听启动更快"
+        ]
+      }
+    },
+    {
+      "versionCode": 17,
+      "versionName": "2.0.0",
+      "fecha": "2026-10-04",
+      "novedades": {
+        "es": [
+          "Nueva firma: desinstala la versión anterior e instala esta una vez; con sesión iniciada, tus datos vuelven",
+          "Más ligera y fina: la app pesa la mitad",
+          "Guarda las canciones de la radio con un toque, desde el propio reproductor",
+          "Menú ⋮ en la pantalla completa: añadir a una lista, ir al artista, compartir y abrir en YouTube",
+          "Sin «repetir», la cola se vacía al escucharla; y toda la app, traducida a tu idioma",
+          "Política de privacidad, y la opción de borrar tu cuenta en Ajustes"
+        ],
+        "en": [
+          "New signature: uninstall the previous version and install this one once; signed in, your data comes back",
+          "Lighter and smoother: the app is half the size",
+          "Save radio songs with one tap, right from the player",
+          "⋮ menu in the full-screen player: add to a playlist, go to the artist, share and open in YouTube",
+          "Without «repeat», the queue empties as you listen; and the whole app is translated",
+          "Privacy policy, and the option to delete your account in Settings"
+        ],
+        "fr": [
+          "Nouvelle signature : désinstalle l’ancienne version et installe celle-ci une fois ; connecté, tout revient",
+          "Plus légère et fluide : l’app pèse moitié moins",
+          "Ajoute les morceaux de la radio d’un geste, depuis le lecteur",
+          "Menu ⋮ en plein écran : ajouter à une playlist, aller à l’artiste, partager et ouvrir dans YouTube",
+          "Sans « répéter », la file se vide en écoutant ; et toute l’app est traduite",
+          "Politique de confidentialité, et l’option de supprimer ton compte dans Réglages"
+        ],
+        "de": [
+          "Neue Signatur: Alte Version deinstallieren und diese einmal installieren; angemeldet kommen Daten zurück",
+          "Leichter und flüssiger: Die App ist nur noch halb so groß",
+          "Radiotitel mit einem Tipp speichern, direkt im Player",
+          "⋮-Menü im Vollbild: zur Playlist hinzufügen, zum Künstler, teilen und in YouTube öffnen",
+          "Ohne «Wiederholen» leert sich die Warteschlange beim Hören; und die ganze App ist übersetzt",
+          "Datenschutzerklärung und die Möglichkeit, dein Konto in den Einstellungen zu löschen"
+        ],
+        "pt": [
+          "Nova assinatura: desinstala a versão anterior e instala esta uma vez; com sessão iniciada, tudo volta",
+          "Mais leve e fluida: a app pesa metade",
+          "Guarda as músicas da rádio com um toque, no próprio leitor",
+          "Menu ⋮ no ecrã completo: adicionar a uma playlist, ir ao artista, partilhar e abrir no YouTube",
+          "Sem «repetir», a fila esvazia-se ao ouvir; e toda a app está traduzida",
+          "Política de privacidade e a opção de eliminar a tua conta em Definições"
+        ],
+        "zh": [
+          "新签名：请卸载旧版本并安装此版本（仅此一次）；登录过的话，数据会自动恢复",
+          "更轻更流畅：应用体积减半",
+          "在播放器中一键保存电台歌曲",
+          "全屏播放器的 ⋮ 菜单：加入歌单、查看艺人、分享、在 YouTube 中打开",
+          "关闭“重复”时，播放过的歌曲会离开队列；整个应用均已翻译",
+          "隐私政策，以及在设置中删除账户的选项"
+        ]
+      }
+    },
+    {
+      "versionCode": 16,
+      "versionName": "1.8.0",
+      "fecha": "2026-09-30",
+      "novedades": {
+        "es": [
+          "Modo radio: al acabar la cola, la música sigue con canciones parecidas a la última",
+          "Guarda en tu biblioteca las canciones de la radio que te gusten, al momento y sin volver a descargarlas",
+          "«No me gusta» salta una canción de la radio y no vuelve a salir",
+          "Inicia la radio desde cualquier canción, y elige en Ajustes si solo con Wi-Fi"
+        ],
+        "en": [
+          "Radio mode: when the queue ends, the music keeps going with songs like the last one",
+          "Save the radio songs you like to your library instantly, without downloading them again",
+          "«I don't like it» skips a radio song and it won't come back",
+          "Start the radio from any song, and choose in Settings whether it runs only on Wi-Fi"
+        ],
+        "fr": [
+          "Mode radio : à la fin de la file, la musique continue avec des morceaux proches du dernier",
+          "Ajoute à ta bibliothèque les morceaux de la radio qui te plaisent, sans les retélécharger",
+          "« Je n’aime pas » passe un morceau de la radio et il ne revient plus",
+          "Lance la radio depuis n’importe quel morceau, et choisis dans Réglages : Wi-Fi seulement ou non"
+        ],
+        "de": [
+          "Radiomodus: Am Ende der Warteschlange geht es mit ähnlichen Titeln weiter",
+          "Speichere Radiotitel, die dir gefallen, sofort in der Bibliothek, ohne sie erneut zu laden",
+          "«Gefällt mir nicht» überspringt einen Radiotitel, und er kommt nicht wieder",
+          "Starte das Radio von jedem Titel aus und lege in Einstellungen fest, ob nur mit WLAN"
+        ],
+        "pt": [
+          "Modo rádio: no fim da fila, a música continua com músicas parecidas com a última",
+          "Guarda na biblioteca as músicas da rádio de que gostas, na hora e sem as transferir de novo",
+          "«Não gosto» salta uma música da rádio e ela não volta",
+          "Inicia a rádio a partir de qualquer música e escolhe em Definições se só com Wi-Fi"
+        ],
+        "zh": [
+          "电台模式：队列结束后，继续播放与最后一首相似的歌曲",
+          "喜欢的电台歌曲可立即保存到音乐库，无需重新下载",
+          "“不喜欢”会跳过电台歌曲，且不会再出现",
+          "可从任意歌曲开启电台，并在设置中选择是否仅限 Wi-Fi"
+        ]
+      }
+    },
+    {
+      "versionCode": 15,
+      "versionName": "1.7.1",
+      "fecha": "2026-09-30",
+      "novedades": {
+        "es": [
+          "Favoritos, historial y cola más ágiles, también con cientos de canciones",
+          "La app arranca antes: ya no espera a YouTube, tampoco sin conexión",
+          "La vista previa de una búsqueda empieza sola aunque la toques mientras carga"
+        ],
+        "en": [
+          "Favorites, history and queue are snappier, even with hundreds of songs",
+          "The app starts faster: it no longer waits for YouTube, even offline",
+          "A search preview now starts on its own even if you tap it while it loads"
+        ],
+        "fr": [
+          "Favoris, historique et file d’attente plus fluides, même avec des centaines de morceaux",
+          "L’app démarre plus vite : elle n’attend plus YouTube, même hors ligne",
+          "L’aperçu d’une recherche démarre seul même si tu le touches pendant le chargement"
+        ],
+        "de": [
+          "Favoriten, Verlauf und Warteschlange sind flotter, auch mit Hunderten Titeln",
+          "Die App startet schneller: Sie wartet nicht mehr auf YouTube, auch offline",
+          "Die Vorschau einer Suche startet von selbst, auch wenn du sie beim Laden antippst"
+        ],
+        "pt": [
+          "Favoritos, histórico e fila mais ágeis, mesmo com centenas de músicas",
+          "A app arranca mais depressa: já não espera pelo YouTube, nem sem ligação",
+          "A pré-visualização de uma pesquisa começa sozinha mesmo se tocares enquanto carrega"
+        ],
+        "zh": [
+          "收藏、历史和播放队列更流畅，即使有数百首歌曲",
+          "应用启动更快：不再等待 YouTube，离线时也一样",
+          "搜索预览即使在加载时点击，也会在就绪后自动播放"
+        ]
+      }
+    },
+    {
+      "versionCode": 14,
+      "versionName": "1.7.0",
+      "fecha": "2026-09-30",
+      "novedades": {
+        "es": [
+          "Importa tus listas de Spotify y otros servicios: desde un fichero CSV o pegando las canciones",
+          "La app va más ágil: arranca antes y gasta menos mientras suena la música",
+          "Nuevo apartado Ajustes: tu cuenta, la reproducción y la versión de la app, con lo nuevo de cada una",
+          "Si dijiste «Ahora no» a una actualización, ahora puedes actualizar cuando quieras desde Ajustes"
+        ],
+        "en": [
+          "Import your playlists from Spotify and other services: from a CSV file or by pasting the songs",
+          "The app is snappier: it starts faster and uses less while music plays",
+          "New Settings section: your account, playback and the app version, with what's new in each one",
+          "If you said «Not now» to an update, you can now update whenever you like from Settings"
+        ],
+        "fr": [
+          "Importe tes playlists de Spotify et d’autres services : depuis un fichier CSV ou en collant les morceaux",
+          "L’app est plus fluide : elle démarre plus vite et consomme moins pendant la musique",
+          "Nouvelle section Réglages : ton compte, la lecture et la version de l’app, avec les nouveautés",
+          "Si tu as dit « Pas maintenant » à une mise à jour, tu peux la faire quand tu veux dans Réglages"
+        ],
+        "de": [
+          "Importiere deine Playlists von Spotify und anderen Diensten: per CSV-Datei oder durch Einfügen",
+          "Die App ist flotter: Sie startet schneller und braucht weniger, während Musik läuft",
+          "Neuer Bereich Einstellungen: dein Konto, die Wiedergabe und die App-Version mit allen Neuerungen",
+          "Wenn du bei einem Update «Nicht jetzt» gesagt hast, kannst du es jetzt jederzeit in Einstellungen holen"
+        ],
+        "pt": [
+          "Importa as tuas playlists do Spotify e de outros serviços: a partir de um CSV ou colando as músicas",
+          "A app está mais ágil: arranca mais depressa e gasta menos enquanto toca música",
+          "Nova secção Definições: a tua conta, a reprodução e a versão da app, com as novidades de cada uma",
+          "Se disseste «Agora não» a uma atualização, já podes atualizar quando quiseres em Definições"
+        ],
+        "zh": [
+          "从 Spotify 等服务导入你的歌单：使用 CSV 文件或直接粘贴歌曲",
+          "应用更流畅：启动更快，播放音乐时更省电",
+          "新增“设置”：你的账户、播放和应用版本，以及每个版本的新内容",
+          "如果你对更新点了“以后再说”，现在可以随时在“设置”中更新"
+        ]
+      }
+    },
+    {
+      "versionCode": 13,
+      "versionName": "1.6.0",
+      "fecha": "2026-09-29",
+      "novedades": {
+        "es": [
+          "Tu año en música: tu resumen del año, contado como una historia",
+          "Las listas y los Mix se descargan mucho más rápido, y cada canción entra en tu biblioteca al terminar",
+          "Un solo aviso para toda la descarga: cuántas van, y «Reintentar» si falla alguna",
+          "Arreglado: una canción descargada seguía «en la nube» dentro de sus listas"
+        ],
+        "en": [
+          "Your year in music: your yearly recap, told as a story",
+          "Playlists and Mixes download much faster, and each song lands in your library as soon as it is done",
+          "A single notice for the whole download: how many are done, and «Retry» if any fail",
+          "Fixed: a downloaded song still showed as «in the cloud» inside its playlists"
+        ],
+        "fr": [
+          "Ton année en musique : ton récap de l’année, raconté comme une histoire",
+          "Les playlists et les Mix se téléchargent bien plus vite, chaque morceau arrive vite dans ta bibliothèque",
+          "Une seule notification pour tout le téléchargement : combien sont faits, et « Réessayer » en cas d’échec",
+          "Corrigé : un morceau téléchargé restait « dans le cloud » dans ses playlists"
+        ],
+        "de": [
+          "Dein Musikjahr: dein Jahresrückblick, als Geschichte erzählt",
+          "Playlists und Mixe laden viel schneller, und jeder Titel landet sofort in deiner Bibliothek",
+          "Ein Hinweis für den ganzen Download: wie viele fertig sind, und «Erneut versuchen» bei Fehlern",
+          "Behoben: Ein heruntergeladener Titel stand in seinen Playlists weiter «in der Cloud»"
+        ],
+        "pt": [
+          "O teu ano em música: o resumo do teu ano, contado como uma história",
+          "As playlists e os Mix transferem-se muito mais depressa, e cada música entra na biblioteca assim que termina",
+          "Um só aviso para toda a transferência: quantas vão, e «Tentar de novo» se alguma falhar",
+          "Corrigido: uma música transferida continuava «na nuvem» dentro das suas playlists"
+        ],
+        "zh": [
+          "你的音乐年度回顾：以故事的形式呈现你的一年",
+          "播放列表和合辑下载更快，每首歌下载完成后立即进入音乐库",
+          "整个下载只有一个通知：显示进度，失败时可「重试」",
+          "已修复：已下载的歌曲在播放列表中仍显示「在云端」"
+        ]
+      }
+    },
+    {
+      "versionCode": 12,
+      "versionName": "1.5.1",
+      "fecha": "2026-09-28",
+      "novedades": {
+        "es": [
+          "En la biblioteca, las canciones descargadas aparecen antes que las de la nube"
+        ],
+        "en": [
+          "In the library, downloaded songs now come before the ones in the cloud"
+        ],
+        "fr": [
+          "Dans la bibliothèque, les morceaux téléchargés passent avant ceux du cloud"
+        ],
+        "de": [
+          "In der Bibliothek stehen heruntergeladene Titel jetzt vor denen in der Cloud"
+        ],
+        "pt": [
+          "Na biblioteca, as músicas transferidas aparecem antes das que estão na nuvem"
+        ],
+        "zh": [
+          "音乐库中，已下载的歌曲现在排在云端歌曲之前"
+        ]
+      }
+    },
+    {
+      "versionCode": 11,
+      "versionName": "1.5.0",
+      "fecha": "2026-09-28",
+      "novedades": {
+        "es": [
+          "Sigue una lista de YouTube y lo nuevo que le añadan llega solo",
+          "Aviso al terminar una descarga larga con la app en segundo plano",
+          "Cerrar la app a mitad de una descarga ya no la pierde",
+          "Los Mix de YouTube ya no repiten canciones"
+        ],
+        "en": [
+          "Follow a YouTube playlist and whatever is added to it arrives on its own",
+          "A notification when a long download finishes with the app in the background",
+          "Closing the app mid-download no longer loses it",
+          "YouTube Mixes no longer repeat songs"
+        ],
+        "fr": [
+          "Suis une playlist YouTube : ce qu’on y ajoute arrive tout seul",
+          "Une notification à la fin d’un long téléchargement quand l’app est en arrière-plan",
+          "Fermer l’app en plein téléchargement ne le fait plus perdre",
+          "Les Mix YouTube ne répètent plus de morceaux"
+        ],
+        "de": [
+          "Folge einer YouTube-Playlist: Neues kommt von selbst",
+          "Hinweis, wenn ein langer Download im Hintergrund fertig ist",
+          "Die App mitten im Download zu schließen verliert ihn nicht mehr",
+          "YouTube-Mixe wiederholen keine Titel mehr"
+        ],
+        "pt": [
+          "Segue uma playlist do YouTube e o que lhe juntarem chega sozinho",
+          "Aviso ao terminar uma transferência longa com a app em segundo plano",
+          "Fechar a app a meio de uma transferência já não a perde",
+          "Os Mix do YouTube já não repetem músicas"
+        ],
+        "zh": [
+          "关注 YouTube 播放列表，新添加的歌曲会自动到来",
+          "应用在后台时，长时间下载完成后会发出通知",
+          "下载途中关闭应用不会再丢失下载",
+          "YouTube 合辑不再重复歌曲"
+        ]
+      }
+    },
+    {
+      "versionCode": 10,
+      "versionName": "1.4.1",
+      "fecha": "2026-09-27",
+      "novedades": {
+        "es": [
+          "Las canciones descargadas antes también se suben a tu cuenta",
+          "Arreglado: canciones que salían en la nube estando ya descargadas",
+          "Artistas cuenta solo lo que tienes en este dispositivo",
+          "Se edita desde la pantalla completa: sin lápiz en las listas",
+          "Arreglado: la Biblioteca ya no se desplaza de lado en el móvil"
+        ],
+        "en": [
+          "Songs downloaded earlier now go up to your account too",
+          "Fixed: songs showing in the cloud when already downloaded",
+          "Artists only counts what is on this device",
+          "Edit from the full player: no pencil in song lists",
+          "Fixed: the Library no longer scrolls sideways on phones"
+        ],
+        "fr": [
+          "Les morceaux téléchargés avant sont aussi envoyés sur ton compte",
+          "Corrigé : des morceaux apparaissaient dans le cloud alors qu'ils étaient téléchargés",
+          "Artistes ne compte que ce qui est sur cet appareil",
+          "On modifie depuis le lecteur plein écran : plus de crayon dans les listes",
+          "Corrigé : la Bibliothèque ne défile plus sur le côté sur mobile"
+        ],
+        "de": [
+          "Früher heruntergeladene Titel landen jetzt auch in deinem Konto",
+          "Behoben: Titel erschienen in der Cloud, obwohl sie heruntergeladen waren",
+          "Künstler zählt nur, was auf diesem Gerät ist",
+          "Bearbeiten im Vollbild-Player: kein Stift mehr in Listen",
+          "Behoben: Die Bibliothek lässt sich auf dem Handy nicht mehr seitlich verschieben"
+        ],
+        "pt": [
+          "As músicas transferidas antes também sobem para a tua conta",
+          "Corrigido: músicas apareciam na nuvem estando já transferidas",
+          "Artistas conta só o que tens neste dispositivo",
+          "Edita-se no leitor em ecrã inteiro: sem lápis nas listas",
+          "Corrigido: a Biblioteca já não desliza para o lado no telemóvel"
+        ],
+        "zh": [
+          "之前下载的歌曲现在也会上传到你的账户",
+          "已修复：已下载的歌曲仍显示在云端",
+          "歌手只统计本设备上的歌曲",
+          "在全屏播放器中编辑：列表中不再有铅笔按钮",
+          "已修复：手机上的音乐库不再左右滑动"
+        ]
+      }
+    },
+    {
+      "versionCode": 9,
+      "versionName": "1.4.0",
+      "fecha": "2026-09-27",
+      "novedades": {
+        "es": [
+          "Artista y canción limpios en toda la app, y editables",
+          "Biblioteca por artistas y listas que se hacen solas",
+          "Sin cortes entre canciones, fundidos y volumen igualado",
+          "Tu biblioteca y tus listas en todos tus dispositivos, y copia de seguridad",
+          "Los favoritos se vuelven a descargar sin errores"
+        ],
+        "en": [
+          "Clean artist and song names everywhere, and editable",
+          "Library by artist and playlists that build themselves",
+          "Gapless playback, crossfades and even volume",
+          "Your library and playlists on all your devices, plus backups",
+          "Favourites download again without errors"
+        ],
+        "fr": [
+          "Artiste et titre propres partout dans l'app, et modifiables",
+          "Bibliothèque par artiste et playlists qui se font toutes seules",
+          "Lecture sans coupure, fondus et volume égalisé",
+          "Ta bibliothèque et tes playlists sur tous tes appareils, et sauvegarde",
+          "Les favoris se retéléchargent sans erreur"
+        ],
+        "de": [
+          "Saubere Künstler- und Titelnamen überall, und bearbeitbar",
+          "Bibliothek nach Künstlern und Playlists, die sich selbst füllen",
+          "Lückenlose Wiedergabe, Überblendungen und angeglichene Lautstärke",
+          "Deine Bibliothek und Playlists auf all deinen Geräten, plus Sicherung",
+          "Favoriten lassen sich wieder fehlerfrei herunterladen"
+        ],
+        "pt": [
+          "Artista e música limpos em toda a app, e editáveis",
+          "Biblioteca por artistas e listas que se fazem sozinhas",
+          "Sem cortes entre músicas, transições e volume igualado",
+          "A tua biblioteca e listas em todos os teus dispositivos, e cópia de segurança",
+          "Os favoritos voltam a transferir-se sem erros"
+        ],
+        "zh": [
+          "全应用统一显示干净的歌手和歌名，并可编辑",
+          "按歌手浏览音乐库，以及自动生成的歌单",
+          "无缝播放、淡入淡出和音量均衡",
+          "音乐库和歌单同步到你的所有设备，并支持备份",
+          "收藏的歌曲可以正常重新下载"
+        ]
+      }
+    },
+    {
+      "versionCode": 8,
+      "versionName": "1.3.0",
+      "fecha": "2026-09-27",
+      "novedades": {
+        "es": [
+          "Corrección de seguridad: los títulos de las canciones ya no pueden ejecutar nada",
+          "La app arranca con su icono, sin pantallazo blanco, y la barra de pestañas se ve desde el principio",
+          "Icono temático en Android 13 o superior",
+          "Pantallas vacías con ilustración y esqueletos mientras carga"
+        ],
+        "en": [
+          "Security fix: song titles can no longer run anything",
+          "The app starts with its icon, without a white flash, and the tab bar is visible from the start",
+          "Themed icon on Android 13 and later",
+          "Empty screens with illustrations and placeholders while loading"
+        ],
+        "fr": [
+          "Correctif de sécurité : les titres des morceaux ne peuvent plus rien exécuter",
+          "L'app démarre avec son icône, sans flash blanc, et la barre d'onglets est visible dès le départ",
+          "Icône à thème sur Android 13 ou version ultérieure",
+          "Écrans vides illustrés et squelettes pendant le chargement"
+        ],
+        "de": [
+          "Sicherheitskorrektur: Songtitel können nichts mehr ausführen",
+          "Die App startet mit ihrem Symbol, ohne weißen Blitz, und die Tab-Leiste ist von Anfang an sichtbar",
+          "Design-Symbol ab Android 13",
+          "Leere Ansichten mit Illustrationen und Platzhaltern beim Laden"
+        ],
+        "pt": [
+          "Correção de segurança: os títulos das músicas já não podem executar nada",
+          "A app arranca com o seu ícone, sem ecrã branco, e a barra de separadores vê-se desde o início",
+          "Ícone temático no Android 13 ou superior",
+          "Ecrãs vazios com ilustração e esqueletos durante o carregamento"
+        ],
+        "zh": [
+          "安全修复：歌曲标题不再能执行任何内容",
+          "应用启动时显示图标，不再闪白，标签栏从一开始就可见",
+          "Android 13 及以上支持主题图标",
+          "空白页面配有插图，加载时显示骨架占位"
+        ]
+      }
+    },
+    {
+      "versionCode": 7,
+      "versionName": "1.2.2",
+      "fecha": "2026-09-25",
+      "novedades": {
+        "es": [
+          "Nueva página de la app, con sus novedades, cómo instalarla y qué permisos usa",
+          "La ventana de descarga enlaza a esa página para saber más",
+          "Dentro de la app ya no aparece el botón para descargar la propia app"
+        ],
+        "en": [
+          "New app page with what's new, how to install it and which permissions it uses",
+          "The download window links to that page to learn more",
+          "The button to download the app no longer appears inside the app itself"
+        ],
+        "fr": [
+          "Nouvelle page de l'app : nouveautés, installation et autorisations utilisées",
+          "La fenêtre de téléchargement renvoie vers cette page pour en savoir plus",
+          "Le bouton pour télécharger l'app n'apparaît plus dans l'app elle-même"
+        ],
+        "de": [
+          "Neue App-Seite mit Neuigkeiten, Installationsanleitung und verwendeten Berechtigungen",
+          "Das Download-Fenster verlinkt auf diese Seite für mehr Informationen",
+          "Die Schaltfläche zum Herunterladen der App erscheint nicht mehr in der App selbst"
+        ],
+        "pt": [
+          "Nova página da app, com as novidades, como instalá-la e que permissões usa",
+          "A janela de transferência tem uma ligação para essa página para saber mais",
+          "O botão para transferir a app já não aparece dentro da própria app"
+        ],
+        "zh": [
+          "全新的应用页面：更新内容、安装方法及所用权限",
+          "下载窗口可链接到该页面以了解更多",
+          "应用内不再显示下载应用本身的按钮"
+        ]
+      }
+    },
+    {
+      "versionCode": 5,
+      "versionName": "1.2.0",
+      "fecha": "2026-09-25",
+      "novedades": {
+        "es": [
+          "Avisos de nuevas versiones, como este",
+          "Aviso al añadir una canción a la cola desde la Biblioteca",
+          "Nuevo diseño con animaciones fluidas y cristal esmerilado",
+          "Controles con carátula en la notificación y la pantalla de bloqueo"
+        ],
+        "en": [
+          "New version alerts, like this one",
+          "A notice when you add a song to the queue from the Library",
+          "New design with fluid animations and frosted glass",
+          "Controls with artwork in the notification and on the lock screen"
+        ],
+        "fr": [
+          "Alertes de nouvelle version, comme celle-ci",
+          "Un avis quand vous ajoutez un titre à la file depuis la Bibliothèque",
+          "Nouveau design avec des animations fluides et du verre dépoli",
+          "Commandes avec pochette dans la notification et sur l'écran de verrouillage"
+        ],
+        "de": [
+          "Hinweise auf neue Versionen wie dieser",
+          "Ein Hinweis, wenn du aus der Bibliothek einen Titel zur Warteschlange hinzufügst",
+          "Neues Design mit flüssigen Animationen und Milchglas",
+          "Steuerung mit Cover in der Benachrichtigung und auf dem Sperrbildschirm"
+        ],
+        "pt": [
+          "Avisos de novas versões, como este",
+          "Um aviso ao adicionar uma música à fila a partir da Biblioteca",
+          "Novo design com animações fluidas e vidro fosco",
+          "Controlos com capa na notificação e no ecrã de bloqueio"
+        ],
+        "zh": [
+          "新版本提醒，就像这条",
+          "从资料库添加歌曲到播放队列时会有提示",
+          "全新设计：流畅动画与磨砂玻璃效果",
+          "通知栏和锁屏上带封面的播放控制"
+        ]
+      }
+    }
+  ]
+}

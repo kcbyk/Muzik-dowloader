@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Descarga la app Android de Music Downloader: busca canciones, descárgalas en M4A o MP3 y escúchalas sin conexión.">
+    <meta name="theme-color" content="#0A0C0A">
+    <!-- La tarjeta al compartir el enlace (LinkedIn, WhatsApp, X…), plan 21 -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Music Downloader">
+    <meta property="og:title" content="App para Android — Music Downloader">
+    <meta property="og:description" content="Descarga la app Android de Music Downloader: busca canciones, descárgalas en M4A o MP3 y escúchalas sin conexión.">
+    <meta property="og:url" content="https://music.dannarita.es/download">
+    <meta property="og:image" content="https://music.dannarita.es/og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Music Downloader en el móvil: la biblioteca, el reproductor y la cola">
+    <meta property="og:locale" content="es_ES">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>App para Android — Music Downloader</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preload" href="/src/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/src/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <script type="module" src="/src/pages/download.js"></script>
+</head>
+<body>
+    <div class="fondo" aria-hidden="true"></div>
+
+    <!-- Cabecera -->
+    <header class="cabecera">
+        <a class="marca" href="/">
+            <img src="/favicon.png" alt="" width="28" height="28">
+            <span>Music Downloader</span>
+        </a>
+        <div class="cabecera-acciones">
+            <label class="selector-idioma">
+                <span class="sr-only">Idioma</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+                <select id="idioma"></select>
+            </label>
+            <a class="boton boton-fantasma" href="/" data-t="nav_web">Abrir la web</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Portada -->
+        <section class="portada">
+            <div class="portada-texto">
+                <p class="antetitulo" data-t="hero_eyebrow">App para Android</p>
+                <h1 data-t="hero_title">Tu música, siempre contigo</h1>
+                <p class="portada-sub" data-t="hero_sub">Busca canciones, descárgalas en M4A o MP3 y escúchalas sin conexión, con la pantalla apagada y con los controles a mano.</p>
+                <div class="acciones">
+                    <a class="boton boton-principal" href="/ytmusic.apk" download>
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 19h14"/></svg>
+                        <span data-t="cta_download">Descargar para Android</span>
+                    </a>
+                    <a class="boton boton-secundario" href="/" data-t="cta_web">Usar en el navegador</a>
+                </div>
+                <p class="meta" data-meta>Android 5.1 o superior</p>
+                <p class="meta meta-suave" data-t="meta_free">Gratis y sin anuncios</p>
+            </div>
+
+            <!-- Composición decorativa: la isla de descarga y el mini reproductor -->
+            <div class="portada-visual" aria-hidden="true">
+                <div class="halo"></div>
+                <div class="isla">
+                    <svg class="isla-anillo" viewBox="0 0 36 36"><circle cx="18" cy="18" r="15"/><circle class="isla-progreso" cx="18" cy="18" r="15"/></svg>
+                    <span class="isla-texto"><b data-t="visual_downloading">Descargando</b> · 64 %</span>
+                </div>
+                <img class="icono-app" src="/favicon.png" alt="" width="168" height="168">
+                <div class="mini">
+                    <span class="mini-arte"></span>
+                    <span class="mini-texto">
+                        <b data-t="visual_song">Tu canción favorita</b>
+                        <small data-t="visual_artist">Artista</small>
+                    </span>
+                    <span class="mini-play"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z"/></svg></span>
+                    <span class="mini-barra"><i></i></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Funciones -->
+        <section class="seccion revelar">
+            <h2 data-t="feat_title">Todo lo que hace</h2>
+            <div class="rejilla">
+                <article class="tarjeta">
+                    <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg>
+                    <h3 data-t="f1_t">Busca y descarga</h3>
+                    <p data-t="f1_d"></p>
+                </article>
+                <article class="tarjeta">
+                    <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14.5a4.5 4.5 0 0 1 3.4-4.4A6 6 0 0 1 19 11a4 4 0 0 1-.5 8H8.5A4.5 4.5 0 0 1 4 14.5z"/><path d="M9.5 14.5l2 2 3.5-4"/></svg>
+                    <h3 data-t="f2_t">Sin conexión</h3>
+                    <p data-t="f2_d"></p>
+                </article>
+                <article class="tarjeta">
+                    <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M11 9.5v5.2a1.6 1.6 0 1 1-1-1.5M11 9.5l3 1"/></svg>
+                    <h3 data-t="f3_t">En segundo plano</h3>
+                    <p data-t="f3_d"></p>
+                </article>
+                <article class="tarjeta">
+                    <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h11M4 11h11M4 16h6"/><path d="M18.5 12.5l1.2 2.4 2.6.4-1.9 1.8.5 2.6-2.4-1.3-2.3 1.3.4-2.6-1.9-1.8 2.7-.4z"/></svg>
+                    <h3 data-t="f4_t">Playlists y favoritos</h3>
+                    <p data-t="f4_d"></p>
+                </article>
+                <article class="tarjeta">
+                    <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6h14M5 10.5h10M5 15h14M5 19.5h8"/></svg>
+                    <h3 data-t="f5_t">Letras sincronizadas</h3>
+                    <p data-t="f5_d"></p>
+                </article>
+                <article class="tarjeta">
+                    <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 7.5A2 2 0 0 1 5.5 5.5h4l2 2.5h7a2 2 0 0 1 2 2v7.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/><path d="M12 11v5M9.5 13.5h5"/></svg>
+                    <h3 data-t="f6_t">Importa tu música</h3>
+                    <p data-t="f6_d"></p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Novedades: del mismo fichero que el aviso de nueva versión de la app -->
+        <section class="seccion revelar">
+            <div class="panel novedades-panel">
+                <div class="panel-cabecera">
+                    <h2 data-t="news_title">Novedades</h2>
+                    <span class="etiqueta" id="novedadesVersion"></span>
+                </div>
+                <ul class="novedades" id="novedades"></ul>
+            </div>
+        </section>
+
+        <!-- Instalación -->
+        <section class="seccion revelar">
+            <h2 data-t="install_title">Instálala en un minuto</h2>
+            <ol class="pasos">
+                <li class="paso">
+                    <span class="paso-numero">1</span>
+                    <div><h3 data-t="s1_t">Descarga el archivo</h3><p data-t="s1_d"></p></div>
+                </li>
+                <li class="paso">
+                    <span class="paso-numero">2</span>
+                    <div><h3 data-t="s2_t">Permite la instalación</h3><p data-t="s2_d"></p></div>
+                </li>
+                <li class="paso">
+                    <span class="paso-numero">3</span>
+                    <div><h3 data-t="s3_t">Ábrela y listo</h3><p data-t="s3_d"></p></div>
+                </li>
+            </ol>
+            <div class="nota">
+                <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.7M20 4v4.5h-4.5"/></svg>
+                <div><h3 data-t="update_t">¿Ya la tienes instalada?</h3><p data-t="update_d"></p></div>
+            </div>
+        </section>
+
+        <!-- Transparencia: los permisos reales de la APK y para qué sirven -->
+        <section class="seccion revelar">
+            <h2 data-t="trust_title">Transparencia</h2>
+            <p class="seccion-sub" data-t="trust_sub"></p>
+            <ul class="permisos">
+                <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+                    <div><h3 data-t="p_internet_t">Internet</h3><p data-t="p_internet_d"></p></div></li>
+                <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3.5H7.5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V8z"/><path d="M14 3.5V8h4.5M11 11.5v4.3a1.4 1.4 0 1 1-1-1.3M11 11.5l2.5.8"/></svg>
+                    <div><h3 data-t="p_audio_t">Archivos de audio</h3><p data-t="p_audio_d"></p></div></li>
+                <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 1.5h-15z"/><path d="M10 20.5a2.2 2.2 0 0 0 4 0"/></svg>
+                    <div><h3 data-t="p_notif_t">Notificaciones</h3><p data-t="p_notif_d"></p></div></li>
+                <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 14.5A8 8 0 0 1 9.5 4.5a8 8 0 1 0 10 10z"/><path d="M15 5.5l1 2 2 1-2 1-1 2-1-2-2-1 2-1z"/></svg>
+                    <div><h3 data-t="p_fondo_t">Reproducción en segundo plano</h3><p data-t="p_fondo_d"></p></div></li>
+                <li><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="4" width="8" height="16" rx="2"/><path d="M4.5 9v6M19.5 9v6M2 11v2M22 11v2"/></svg>
+                    <div><h3 data-t="p_vibra_t">Vibración</h3><p data-t="p_vibra_d"></p></div></li>
+            </ul>
+            <p class="seccion-sub" data-t="trust_account"></p>
+            <div class="panel firma">
+                <h3 data-t="sig_t">Siempre la misma firma</h3>
+                <p data-t="sig_d"></p>
+                <code class="huella">B7:6C:5F:3D:4E:D7:F5:25:07:5C:DD:BD:67:21:D7:3E:6B:93:BB:9D:63:05:23:BB:43:CF:00:9E:40:04:87:D1</code>
+            </div>
+        </section>
+
+        <!-- Cierre -->
+        <section class="seccion final revelar">
+            <img src="/favicon.png" alt="" width="64" height="64">
+            <h2 data-t="final_title">¿Todo listo?</h2>
+            <p class="seccion-sub" data-t="final_sub"></p>
+            <a class="boton boton-principal" href="/ytmusic.apk" download>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 19h14"/></svg>
+                <span data-t="cta_download">Descargar para Android</span>
+            </a>
+            <p class="meta" data-meta>Android 5.1 o superior</p>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <span data-t="footer">Music Downloader</span>
+        <a href="/privacidad" data-t="privacy">Privacidad</a>
+        <a href="/" data-t="nav_web">Abrir la web</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "youtube-music-downloader",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "sync:apk": "bash scripts/sync-apk.sh",
+    "sync:apk:win": "scripts\\sync-apk.bat",
+    "test": "bash test/run-tests.sh",
+    "test:e2e": "playwright test",
+    "test:perf": "playwright test --config test/perf/playwright.config.js",
+    "springs": "node scripts/generate-springs.mjs",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "eslint": "^9.39.5",
+    "globals": "^15.15.0",
+    "vite": "^5.2.0"
+  }
+}

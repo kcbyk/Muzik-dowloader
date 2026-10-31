@@ -1,0 +1,49 @@
+import { CapacitorConfig } from '@capacitor/cli';
+
+const config: CapacitorConfig = {
+  appId: 'es.dannarita.music',
+  appName: 'Music Downloader',
+  webDir: 'www',
+  // OFFLINE-FIRST: La app carga desde archivos locales incluidos en el APK.
+  // Las llamadas API al servidor se hacen vía getApiBase() → 'https://music.dannarita.es'
+  // Para actualizar la UI, hay que re-copiar los archivos a www/ y rebuild el APK.
+  server: {
+    // Sin 'url' → carga desde assets locales (offline-first)
+    androidScheme: 'https',
+    // Permitir que la WebView haga peticiones al servidor remoto. buymeacoffee.com
+    // no está a propósito: fuera de esta lista, Capacitor abre la web en el
+    // navegador del sistema en vez de sustituir a la app
+    allowNavigation: ['music.dannarita.es', '*.youtube.com', '*.ytimg.com', '*.googleapis.com', '*.google.com', '*.gstatic.com', 'accounts.google.com', 'fonts.googleapis.com', 'fonts.gstatic.com', 'cdnjs.cloudflare.com', 'flagcdn.com']
+  },
+  android: {
+    // User Agent para compatibilidad con Google Auth
+    overrideUserAgent: "Mozilla/5.0 (Linux; Android 10; Mobile) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    allowMixedContent: true, // Allow http resources from local + https
+    // captureInput NO: con él, Capacitor cambia la conexión real de Chromium
+    // con el teclado por una simulada que guarda su propia copia del texto.
+    // Los teclados que escriben por esa vía (el de vivo, por ejemplo) borraban
+    // primero de esa copia invisible: tantas pulsaciones en vacío como letras
+    // escritas antes de borrar nada. En la web, sin él, funciona bien.
+    webContentsDebuggingEnabled: false
+  },
+  plugins: {
+    CapacitorHttp: {
+      enabled: true
+    },
+    // Arranque (plan 10, T6): se queda puesto hasta que la web ha pintado la
+    // biblioteca (main.js lo quita) y, como red de seguridad que no depende de
+    // JavaScript, se quita solo a los 4 s
+    SplashScreen: {
+      launchAutoHide: true,
+      launchShowDuration: 4000,
+      backgroundColor: '#0A0C0A',
+      androidScaleType: 'CENTER',
+      showSpinner: false,
+      splashFullScreen: false,
+      splashImmersive: false
+    },
+    Filesystem: {}
+  }
+};
+
+export default config;
